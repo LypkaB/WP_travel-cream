@@ -67,11 +67,11 @@ add_action( 'wp_head', 'tc_javascript_detection', 0 );
  * Enqueue scripts and styles.
  */
 function tc_scripts() {
-
-	// Load our main stylesheet.
+	// Load our main stylesheet
 	wp_enqueue_style( 'travelcream-style', get_stylesheet_uri() );
+    wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CRoboto:400,500,700%7CSuez+One&display=swap', false, null);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
@@ -80,7 +80,6 @@ function tc_scripts() {
 	tc_viewport();
 }
 add_action( 'wp_enqueue_scripts', 'tc_scripts' );
-
 
 // Determining the type of device
 function tc_viewport() {

@@ -1,0 +1,40 @@
+.header
+  padding-top: 20px
+
+  &__wrap
+    display: flex
+    align-items: center
+
+  &__logo
+    margin-right: 20px
+
+    a
+      font-family: 'Suez One', serif
+      font-size: 20px
+      color: white
+
+  &__btn-menu
+    display: none
+
+  .nav__menu
+    flex-basis: 100%
+
+    .nav__list
+      display: flex
+
+      li + li
+        margin-left: 20px
+
+      a
+        color: white
+
+  &__login-btn
+    background-color: transparent
+    border: 1px solid white
+    border-radius: 4px
+    padding-left: 40px
+    padding-right: 40px
+    text-transform: capitalize
+
+    &:hover
+      background-color: transparent
