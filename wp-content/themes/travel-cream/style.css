@@ -786,3 +786,46 @@ li {
   font-size: 40px;
   color: white;
 }
+
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  /*<----- Header ----->*/
+
+  .header__wrap {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .header .nav__menu {
+    display: none;
+  }
+
+  /*<----- Banner ----->*/
+
+  .banner h2 {
+    font-size: 40px;
+  }
+
+  .banner p {
+    font-size: 20px;
+    color: white;
+  }
+}
+
+@media (max-width: 475px) {
+  /*<----- Banner ----->*/
+
+  .banner h2 {
+    font-size: 30px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+}
