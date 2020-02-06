@@ -787,6 +787,40 @@ li {
   color: white;
 }
 
+.search-form {
+  margin-top: -30px;
+}
+
+.search-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.search-form .from,
+.search-form .want-go {
+  -ms-flex-preferred-size: 32%;
+  flex-basis: 32%;
+}
+
+.search-form input {
+  padding: 15px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search-form .search-btn {
+  -ms-flex-preferred-size: 10%;
+  flex-basis: 10%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  background-color: #ff4861;
+}
+
 @media (max-width: 1280px) {
   .container {
     padding: 0 15px;
