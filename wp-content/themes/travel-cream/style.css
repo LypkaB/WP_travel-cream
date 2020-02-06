@@ -827,6 +827,21 @@ li {
   }
 }
 
+@media (max-width: 768px) {
+  /*<----- Search form ----->*/
+
+  .search-form {
+    padding: 0 5%;
+  }
+
+  .search-form form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 640px) {
   /*<----- Header ----->*/
 
@@ -861,5 +876,20 @@ li {
 
   .banner p {
     font-size: 16px;
+  }
+
+  /*<----- Search form ----->*/
+
+  .search-form {
+    padding: 0;
+  }
+
+  .search-form input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .search-form .search-btn {
+    font-size: 14px;
   }
 }
