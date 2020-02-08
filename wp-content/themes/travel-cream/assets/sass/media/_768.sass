@@ -1,7 +1,31 @@
 @media (max-width: 768px)
-  /*<----- Search form ----->*/
-  .search-form
-    padding: 0 5%
+  /*<----- Base styles ----->*/
+  .section
+    &-title
+      font-size: 22px
 
-    form
-      flex-direction: column
+  /*<----- Header ----->*/
+  .header
+    &__wrap
+      justify-content: space-between
+
+    .nav__menu
+      display: none
+
+  /*<----- section «Search form» ----->*/
+  .search-form form
+    flex-direction: column
+
+  /*<----- section «Flights» ----->*/
+  .flights
+    &__blocks ul
+      li
+        &:nth-child(1)
+          flex-basis: 22%
+
+        &:nth-child(5)
+          flex-basis: 17%
+
+    &__post
+      &_airline
+        flex-basis: 22%

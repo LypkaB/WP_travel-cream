@@ -68,16 +68,23 @@ add_action( 'wp_head', 'tc_javascript_detection', 0 );
  */
 function tc_scripts() {
 	// Load our main stylesheet
-	wp_enqueue_style( 'travelcream-style', get_stylesheet_uri() );
+    wp_enqueue_style('travelcream-style', get_stylesheet_uri());
     wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CRoboto:400,500,700%7CSuez+One&display=swap', false, null);
 
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+    wp_deregister_script('jquery-core');
+    wp_deregister_script('jquery');
+    wp_register_script('jquery-core', 'https://code.jquery.com/jquery-3.4.1.min.js', false, null, true);
+    wp_register_script('jquery', false, ['jquery-core'], null, true);
+    wp_enqueue_script('jquery');
 
-	wp_enqueue_script( 'travelcream-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
+    wp_enqueue_script('script', get_stylesheet_directory_uri() . '/js/main.js', ['jquery'], null, true);
 
-	tc_viewport();
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
+
+    wp_enqueue_script('travelcream-script', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20150330', true);
+    tc_viewport();
 }
 add_action( 'wp_enqueue_scripts', 'tc_scripts' );
 

@@ -66,18 +66,23 @@
     padding-top: 45px
     padding-bottom: 36px
 
+    &_blocks_title
+      display: none
+
     &_airline
+      display: flex
+      align-items: center
+      flex-basis: 27%
+
       &-img
-        flex-basis: 3.5%
+        flex-basis: 14%
         flex-shrink: 0
 
       &-info
-        margin-left: 26px
-        flex-basis: 21.2%
+        margin-left: 23px
 
-        span
-          &:last-child
-            text-transform: uppercase
+        span:last-child
+          text-transform: uppercase
 
     &_date
       flex-basis: 14.5%

@@ -1,13 +1,5 @@
 @media (max-width: 640px)
-  /*<----- Header ----->*/
-  .header
-    &__wrap
-      justify-content: space-between
-
-    .nav__menu
-      display: none
-
-  /*<----- Banner ----->*/
+  /*<----- section «Banner» ----->*/
   .banner
     h2
       font-size: 40px
@@ -15,3 +7,56 @@
     p
       font-size: 20px
       color: white
+
+  /*<----- section «Flights» ----->*/
+  .flights
+    &__header
+      flex-direction: column
+      margin-bottom: 30px
+
+    &__categories
+      margin-top: 30px
+
+      ul li:nth-child(3)
+        margin-left: 0
+
+    &__blocks
+      margin-bottom: 20px
+
+      ul
+        display: none
+
+    &__post
+      flex-wrap: wrap
+      text-align: center
+      justify-content: center
+      padding-top: 30px
+      padding-bottom: 0
+
+      > div
+        margin-bottom: 30px
+        padding: 10px 0
+        flex-basis: 100%
+        border-top: 1px solid rgba(255, 72, 97, 0.3)
+        border-bottom: 1px solid rgba(255, 72, 97, 0.3)
+
+      &_blocks_title
+        display: initial
+        font-size: 16px
+        font-weight: 600
+        color: #585858
+        margin-bottom: 20px
+
+      &_airline
+        justify-content: center
+
+      &_date span:last-child,
+      &_time span:first-child,
+      &_departure span:last-child
+        margin-left: 0
+
+      &_price a
+        margin: 0 auto
+
+    &__see-all-btn
+      text-align: center

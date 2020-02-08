@@ -1,5 +1,11 @@
 @media (max-width: 475px)
-  /*<----- Banner ----->*/
+  /*<----- Header ----->*/
+  .header
+    &__login-btn
+      padding: 7px 30px 7px 25px
+      font-size: 12px
+
+  /*<----- section «Banner» ----->*/
   .banner
     h2
       font-size: 30px
@@ -7,9 +13,11 @@
     p
       font-size: 16px
 
-  /*<----- Search form ----->*/
+  /*<----- section «Search form» ----->*/
   .search-form
-    padding: 0
+    form
+      padding-left: 0
+      padding-right: 0
 
     input
       padding: 10px
@@ -17,3 +25,11 @@
 
     .search-btn
       font-size: 14px
+
+  /*<----- section «Flights» ----->*/
+  .flights
+    padding-top: 40px
+    padding-bottom: 40px
+
+    &__categories ul li
+      margin-left: 12px

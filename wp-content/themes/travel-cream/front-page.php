@@ -4,6 +4,15 @@ Template Name: Home
 */
 ?>
 
+<?php
+    $flights_blocks_title_1 = get_field('flights_blocks_title_1');
+    $flights_blocks_title_2 = get_field('flights_blocks_title_2');
+    $flights_blocks_title_3 = get_field('flights_blocks_title_3');
+    $flights_blocks_title_4 = get_field('flights_blocks_title_4');
+    $flights_blocks_title_5 = get_field('flights_blocks_title_5');
+    $flights_blocks_title_6 = get_field('flights_blocks_title_6');
+?>
+
 <?php get_header(); ?>
 
         <!-- Banner -->
@@ -67,7 +76,14 @@ Template Name: Home
             <!-- /.flights__header -->
 
             <div class="flights__blocks">
-                <?php the_field('flights_blocks_titles'); ?>
+                <ul>
+                    <li><?= $flights_blocks_title_1 ?></li>
+                    <li><?= $flights_blocks_title_2 ?></li>
+                    <li><?= $flights_blocks_title_3 ?></li>
+                    <li><?= $flights_blocks_title_4 ?></li>
+                    <li><?= $flights_blocks_title_5 ?></li>
+                    <li><?= $flights_blocks_title_6 ?></li>
+                </ul>
 
                 <?php
                     global $post;
@@ -84,46 +100,55 @@ Template Name: Home
                         foreach ($flights_post as $post) : setup_postdata($post)
                 ?>
                     <div class="flights__post">
-                        <?php
-                            $flights_post_aln_img = get_field('fgs_post_airline_img');
-                            if (!empty($flights_post_aln_img)) :
-                        ?>
-                            <div class="flights__post_airline-img">
-                                <img src="<?= $flights_post_aln_img['url']; ?>" alt="<?= $flights_post_aln_img['alt']; ?>">
+                        <span class="flights__post_blocks_title"><?= $flights_blocks_title_1 ?></span>
+                        <div class="flights__post_airline">
+                            <?php
+                                $flights_post_aln_img = get_field('fgs_post_airline_img');
+                                if (!empty($flights_post_aln_img)) :
+                            ?>
+                                <div class="flights__post_airline-img">
+                                    <img src="<?= $flights_post_aln_img['url']; ?>" alt="<?= $flights_post_aln_img['alt']; ?>">
+                                </div>
+                                <!-- /.flights__post_airline-img -->
+                            <?php endif; ?>
+
+                            <div class="flights__post_airline-info flights__post_col">
+                                <span><?php the_field('fgs_post_airline_cn'); ?></span>
+                                <span><?php the_field('fgs_post_airline_num'); ?></span>
                             </div>
-                            <!-- /.flights__post_airline-img -->
-                        <?php endif; ?>
-
-                        <div class="flights__post_airline-info flights__post_col">
-                            <span><?php the_field('fgs_post_airline_cn'); ?></span>
-                            <span><?php the_field('fgs_post_airline_num'); ?></span>
+                            <!-- /.flights__post_airline-info -->
                         </div>
-                        <!-- /.flights__post_airline-info -->
+                        <!-- /.flights__post_airline -->
 
+                        <span class="flights__post_blocks_title"><?= $flights_blocks_title_2 ?></span>
                         <div class="flights__post_date flights__post_col">
                             <span><?php the_field('fgs_post_date'); ?></span>
                             <span><?php the_field('fgs_post_date_days'); ?></span>
                         </div>
                         <!-- /.flights__post_date -->
 
+                        <span class="flights__post_blocks_title"><?= $flights_blocks_title_3 ?></span>
                         <div class="flights__post_departure flights__post_col">
                             <span><?php the_field('fgs_post_departure'); ?></span>
                             <span><?php the_field('fgs_post_departure_time'); ?></span>
                         </div>
                         <!-- /.flights__post_departure -->
 
+                        <span class="flights__post_blocks_title"><?= $flights_blocks_title_4 ?></span>
                         <div class="flights__post_arrival flights__post_col">
                             <span><?php the_field('fgs_post_arrival'); ?></span>
                             <span><?php the_field('fgs_post_arrival_time'); ?></span>
                         </div>
                         <!-- /.flights__post_arrival -->
 
+                        <span class="flights__post_blocks_title"><?= $flights_blocks_title_5 ?></span>
                         <div class="flights__post_time flights__post_col">
                             <span><?php the_field('fgs_post_time'); ?></span>
                             <span><?php the_field('fgs_post_time_info'); ?></span>
                         </div>
                         <!-- /.flights__post_time -->
 
+                        <span class="flights__post_blocks_title"><?= $flights_blocks_title_6 ?></span>
                         <div class="flights__post_price">
                             <a href="#!"><?php the_field('fgs_post_price'); ?></a>
                         </div>

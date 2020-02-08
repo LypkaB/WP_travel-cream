@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*!
  Theme Name: Travel Cream
  Text Domain: travelcream
@@ -965,17 +967,30 @@ li {
   padding-bottom: 36px;
 }
 
+.flights__post_blocks_title {
+  display: none;
+}
+
+.flights__post_airline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-preferred-size: 27%;
+  flex-basis: 27%;
+}
+
 .flights__post_airline-img {
-  -ms-flex-preferred-size: 3.5%;
-  flex-basis: 3.5%;
+  -ms-flex-preferred-size: 14%;
+  flex-basis: 14%;
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
 .flights__post_airline-info {
-  margin-left: 26px;
-  -ms-flex-preferred-size: 21.2%;
-  flex-basis: 21.2%;
+  margin-left: 23px;
 }
 
 .flights__post_airline-info span:last-child {
@@ -1054,27 +1069,55 @@ li {
 }
 
 @media (max-width: 1280px) {
+  /*<----- Base styles ----->*/
+
   .container {
-    padding: 0 15px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  /*<----- section «Flights» ----->*/
+
+  .flights__categories ul li,
+  .flights__blocks ul li,
+  .flights__post_col span {
+    font-size: 14px;
+  }
+
+  .flights__blocks ul li:nth-child(1) {
+    -ms-flex-preferred-size: 27%;
+    flex-basis: 27%;
+  }
+
+  .flights__blocks ul li:nth-child(5) {
+    -ms-flex-preferred-size: 18%;
+    flex-basis: 18%;
+  }
+
+  .flights__post_time span:first-child,
+  .flights__post_departure span:last-child {
+    margin-left: 15px;
+  }
+
+  .flights__post_time {
+    -ms-flex-preferred-size: 19.5%;
+    flex-basis: 19.5%;
+  }
+
+  .flights__post_price a {
+    width: 100px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 768px) {
-  /*<----- Search form ----->*/
+  /*<----- Base styles ----->*/
 
-  .search-form {
-    padding: 0 5%;
+  .section-title {
+    font-size: 22px;
   }
 
-  .search-form form {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 640px) {
   /*<----- Header ----->*/
 
   .header__wrap {
@@ -1087,7 +1130,35 @@ li {
     display: none;
   }
 
-  /*<----- Banner ----->*/
+  /*<----- section «Search form» ----->*/
+
+  .search-form form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  /*<----- section «Flights» ----->*/
+
+  .flights__blocks ul li:nth-child(1) {
+    -ms-flex-preferred-size: 22%;
+    flex-basis: 22%;
+  }
+
+  .flights__blocks ul li:nth-child(5) {
+    -ms-flex-preferred-size: 17%;
+    flex-basis: 17%;
+  }
+
+  .flights__post_airline {
+    -ms-flex-preferred-size: 22%;
+    flex-basis: 22%;
+  }
+}
+
+@media (max-width: 640px) {
+  /*<----- section «Banner» ----->*/
 
   .banner h2 {
     font-size: 40px;
@@ -1097,10 +1168,91 @@ li {
     font-size: 20px;
     color: white;
   }
+
+  /*<----- section «Flights» ----->*/
+
+  .flights__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .flights__categories {
+    margin-top: 30px;
+  }
+
+  .flights__categories ul li:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .flights__blocks {
+    margin-bottom: 20px;
+  }
+
+  .flights__blocks ul {
+    display: none;
+  }
+
+  .flights__post {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  .flights__post > div {
+    margin-bottom: 30px;
+    padding: 10px 0;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    border-top: 1px solid rgba(255, 72, 97, 0.3);
+    border-bottom: 1px solid rgba(255, 72, 97, 0.3);
+  }
+
+  .flights__post_blocks_title {
+    display: initial;
+    font-size: 16px;
+    font-weight: 600;
+    color: #585858;
+    margin-bottom: 20px;
+  }
+
+  .flights__post_airline {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .flights__post_date span:last-child,
+  .flights__post_time span:first-child,
+  .flights__post_departure span:last-child {
+    margin-left: 0;
+  }
+
+  .flights__post_price a {
+    margin: 0 auto;
+  }
+
+  .flights__see-all-btn {
+    text-align: center;
+  }
 }
 
 @media (max-width: 475px) {
-  /*<----- Banner ----->*/
+  /*<----- Header ----->*/
+
+  .header__login-btn {
+    padding: 7px 30px 7px 25px;
+    font-size: 12px;
+  }
+
+  /*<----- section «Banner» ----->*/
 
   .banner h2 {
     font-size: 30px;
@@ -1110,10 +1262,11 @@ li {
     font-size: 16px;
   }
 
-  /*<----- Search form ----->*/
+  /*<----- section «Search form» ----->*/
 
-  .search-form {
-    padding: 0;
+  .search-form form {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .search-form input {
@@ -1123,5 +1276,16 @@ li {
 
   .search-form .search-btn {
     font-size: 14px;
+  }
+
+  /*<----- section «Flights» ----->*/
+
+  .flights {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .flights__categories ul li {
+    margin-left: 12px;
   }
 }
