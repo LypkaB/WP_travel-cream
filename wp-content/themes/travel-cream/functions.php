@@ -113,3 +113,32 @@ function tc_viewport() {
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Registration of custom posts «Flights»
+ */
+function flights_post_type() {
+    register_post_type('flights', [
+            'labels' => [
+                'name'          => __('Flights'),
+                'singular_name' => __('Flights')
+            ],
+                'public'        => true,
+                'has_archive'   => true,
+                'show_in_menu'  => true,
+                'supports'      => ['title', 'category'],
+                'taxonomies'    => ['flights_category']
+        ]
+    );
+
+    register_taxonomy(
+        'flights-category',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'flights',        //post type name
+        [
+            'hierarchical'  => true,
+            'label'         => 'Categories',  //Display name
+            'query_var'     => true
+        ]
+    );
+}
+add_action('init', 'flights_post_type');

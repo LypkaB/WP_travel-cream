@@ -1,22 +1,28 @@
 .search-form
-  margin-top: -30px
+  margin-top: -28px
 
   form
     display: flex
     justify-content: center
+    padding-left: 70px
+    padding-right: 67px
 
   .from,
   .want-go
-    flex-basis: 32%
+    flex-basis: 40%
 
   input
-    padding: 15px
+    padding: 15px 15px 15px 31px
     font-family: 'Open Sans', sans-serif
+    color: $lightPrimary
+
+    &::placeholder
+      color: $lightPrimary
 
   .search-btn
-    flex-basis: 10%
+    flex-basis: 13.5%
     font-family: 'Open Sans', sans-serif
     font-size: 16px
     font-weight: 400
     text-transform: capitalize
-    background-color: #ff4861
+    background-color: $red

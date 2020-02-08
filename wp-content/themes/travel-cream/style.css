@@ -689,6 +689,8 @@ img.aligncenter {
   clear: both;
 }
 
+/*<----- Colors ----->*/
+
 /*<----- Base styles ----->*/
 
 body {
@@ -696,7 +698,7 @@ body {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1110px;
   margin: 0 auto;
 }
 
@@ -704,6 +706,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #585858;
 }
 
 ul,
@@ -714,7 +721,7 @@ li {
 }
 
 .header {
-  padding-top: 20px;
+  padding-top: 26px;
 }
 
 .header__wrap {
@@ -727,12 +734,12 @@ li {
 }
 
 .header__logo {
-  margin-right: 20px;
+  margin-right: 23px;
 }
 
 .header__logo a {
   font-family: 'Suez One', serif;
-  font-size: 20px;
+  font-size: 26px;
   color: white;
 }
 
@@ -752,7 +759,7 @@ li {
 }
 
 .header .nav__menu .nav__list li + li {
-  margin-left: 20px;
+  margin-left: 35px;
 }
 
 .header .nav__menu .nav__list a {
@@ -760,11 +767,12 @@ li {
 }
 
 .header__login-btn {
+  margin-top: 3px;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 4px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 10px 40px 10px 35px;
+  font-size: 16px;
   text-transform: capitalize;
 }
 
@@ -773,22 +781,23 @@ li {
 }
 
 .banner {
-  padding: 20% 0;
+  padding: 14% 0 14.2%;
 }
 
 .banner h2 {
-  font-size: 80px;
+  font-size: 78px;
   font-weight: 600;
   color: white;
+  margin-bottom: 12px;
 }
 
 .banner p {
-  font-size: 40px;
+  font-size: 28px;
   color: white;
 }
 
 .search-form {
-  margin-top: -30px;
+  margin-top: -28px;
 }
 
 .search-form form {
@@ -798,27 +807,250 @@ li {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding-left: 70px;
+  padding-right: 67px;
 }
 
 .search-form .from,
 .search-form .want-go {
-  -ms-flex-preferred-size: 32%;
-  flex-basis: 32%;
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
 }
 
 .search-form input {
-  padding: 15px;
+  padding: 15px 15px 15px 31px;
   font-family: 'Open Sans', sans-serif;
+  color: #a4a4a4;
+}
+
+.search-form input::-webkit-input-placeholder {
+  color: #a4a4a4;
+}
+
+.search-form input::-moz-placeholder {
+  color: #a4a4a4;
+}
+
+.search-form input:-ms-input-placeholder {
+  color: #a4a4a4;
+}
+
+.search-form input::-ms-input-placeholder {
+  color: #a4a4a4;
+}
+
+.search-form input::placeholder {
+  color: #a4a4a4;
 }
 
 .search-form .search-btn {
-  -ms-flex-preferred-size: 10%;
-  flex-basis: 10%;
+  -ms-flex-preferred-size: 13.5%;
+  flex-basis: 13.5%;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-transform: capitalize;
   background-color: #ff4861;
+}
+
+.flights {
+  padding-top: 74px;
+  padding-bottom: 100px;
+}
+
+.flights__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.flights__categories ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flights__categories ul li {
+  margin-left: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #585858;
+  cursor: pointer;
+}
+
+.flights__categories ul li:nth-child(1) {
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+
+.flights__categories ul li:nth-child(2) {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.flights__categories ul li:nth-child(3) {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  color: #ff4861;
+}
+
+.flights__categories ul li:nth-child(4) {
+  -webkit-box-ordinal-group: 5;
+  -ms-flex-order: 4;
+  order: 4;
+}
+
+.flights__blocks {
+  margin-bottom: 39px;
+}
+
+.flights__blocks ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.flights__blocks ul li {
+  font-size: 17px;
+  font-weight: 600;
+  color: #585858;
+}
+
+.flights__blocks ul li:nth-child(1) {
+  -ms-flex-preferred-size: 27%;
+  flex-basis: 27%;
+}
+
+.flights__blocks ul li:nth-child(2) {
+  -ms-flex-preferred-size: 14.3%;
+  flex-basis: 14.3%;
+}
+
+.flights__blocks ul li:nth-child(3) {
+  -ms-flex-preferred-size: 15.6%;
+  flex-basis: 15.6%;
+}
+
+.flights__blocks ul li:nth-child(4) {
+  -ms-flex-preferred-size: 13%;
+  flex-basis: 13%;
+}
+
+.flights__blocks ul li:nth-child(5) {
+  -ms-flex-preferred-size: 19.3%;
+  flex-basis: 19.3%;
+}
+
+.flights__post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+  padding-top: 45px;
+  padding-bottom: 36px;
+}
+
+.flights__post_airline-img {
+  -ms-flex-preferred-size: 3.5%;
+  flex-basis: 3.5%;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.flights__post_airline-info {
+  margin-left: 26px;
+  -ms-flex-preferred-size: 21.2%;
+  flex-basis: 21.2%;
+}
+
+.flights__post_airline-info span:last-child {
+  text-transform: uppercase;
+}
+
+.flights__post_date {
+  -ms-flex-preferred-size: 14.5%;
+  flex-basis: 14.5%;
+}
+
+.flights__post_date span:last-child {
+  margin-left: 5px;
+}
+
+.flights__post_departure {
+  -ms-flex-preferred-size: 15.5%;
+  flex-basis: 15.5%;
+}
+
+.flights__post_departure span:last-child {
+  margin-left: 25px;
+}
+
+.flights__post_arrival {
+  -ms-flex-preferred-size: 11%;
+  flex-basis: 11%;
+}
+
+.flights__post_time {
+  -ms-flex-preferred-size: 21%;
+  flex-basis: 21%;
+}
+
+.flights__post_time span:first-child {
+  margin-left: 20px;
+}
+
+.flights__post_time span:last-child {
+  text-transform: uppercase;
+}
+
+.flights__post_price a {
+  display: block;
+  width: 122px;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff4861;
+  text-align: center;
+  border: 1px solid #ff4861;
+  border-radius: 4px;
+}
+
+.flights__post_col span {
+  display: block;
+  font-size: 18px;
+}
+
+.flights__post_col span:first-child {
+  color: #585858;
+  margin-bottom: 5px;
+}
+
+.flights__post_col span:last-child {
+  color: #a4a4a4;
+}
+
+.flights__see-all-btn {
+  text-align: right;
+}
+
+.flights__see-all-btn a {
+  font-size: 17px;
+  color: #585858;
 }
 
 @media (max-width: 1280px) {
