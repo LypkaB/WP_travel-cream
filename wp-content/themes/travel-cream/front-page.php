@@ -15,6 +15,7 @@ Template Name: Home
     $see_all_btn = get_field('see_all_btn');
     $hotels_section_title = get_field('hotels_section_title');
     $attractions_section_title = get_field('attractions_section_title');
+    $trips_section_title = get_field('trips_section_title');
 ?>
 
 <?php get_header(); ?>
@@ -318,6 +319,77 @@ Template Name: Home
                 <a href="#!">
                     <?= $see_all_btn ?>
                     <span><?=$attractions_section_title ?></span>
+                </a>
+            </div>
+            <!-- /.see-all-btn -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Trips -->
+    <section class="trips">
+        <div class="container">
+            <div class="section__header">
+                <div class="section__header-title">
+                    <h2><?= $trips_section_title ?></h2>
+                </div>
+                <!-- /.section__header-title -->
+
+                <div class="section__header-categories">
+                    <?php
+                        $trips_categories = get_terms('category');
+                        if (!empty($trips_categories) && !is_wp_error($trips_categories)) {
+                            echo "<ul>";
+                            foreach ($trips_categories as $trips_category) {
+                                echo "<li>" . $trips_category -> name . "</li>";
+                            }
+                            echo "</ul>";
+                        }
+                    ?>
+                </div>
+                <!-- /.section__header-categories -->
+            </div>
+            <!-- /.section__header -->
+
+            <div class="trips__blocks">
+                <?php
+                    $args = [
+                        'numberposts'   => 3,
+                        'order'         => 'DESC'
+                    ];
+
+                    $posts = get_posts($args);
+
+                    if ($posts) :
+                        foreach ($posts as $post) : setup_postdata($post)
+                ?>
+                    <div class="trips__post">
+                        <div class="trips__post-img">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                        <!-- /.trips__post-img -->
+
+                        <div class="trips__post_content">
+                            <span><?php the_title(); ?></span>
+                            <?php the_excerpt(); ?>
+                        </div>
+                        <!-- /.trips__post_content -->
+
+                        <a href="<?php the_permalink(); ?>" class="trips__post-link"></a>
+                    </div>
+                    <!-- /.trips__post -->
+                <?php
+                        endforeach;
+                        wp_reset_postdata();
+                    endif;
+                ?>
+            </div>
+            <!-- /.trips__blocks -->
+
+            <div class="see-all-btn">
+                <a href="#!">
+                    <?= $see_all_btn ?>
+                    <span><?=$trips_section_title ?></span>
                 </a>
             </div>
             <!-- /.see-all-btn -->
