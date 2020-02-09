@@ -56,7 +56,7 @@ Template Name: Home
     </section>
 
     <!-- Flights -->
-    <section class="flights">
+    <section class="flights" id="flights">
         <div class="container">
             <div class="section__header">
                 <div class="section__header-title">
@@ -179,7 +179,7 @@ Template Name: Home
     </section>
 
     <!-- Hotels -->
-    <section class="hotels">
+    <section class="hotels" id="hotels">
         <div class="container">
             <div class="section__header">
                 <div class="section__header-title">
@@ -265,7 +265,7 @@ Template Name: Home
     </section>
 
     <!-- Attractions -->
-    <section class="attractions">
+    <section class="attractions" id="attractions">
         <div class="container">
             <div class="section__header">
                 <div class="section__header-title">
@@ -327,7 +327,7 @@ Template Name: Home
     </section>
 
     <!-- Trips -->
-    <section class="trips">
+    <section class="trips" id="trips">
         <div class="container">
             <div class="section__header">
                 <div class="section__header-title">

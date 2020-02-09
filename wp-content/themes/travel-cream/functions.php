@@ -67,9 +67,10 @@ add_action( 'wp_head', 'tc_javascript_detection', 0 );
  * Enqueue scripts and styles.
  */
 function tc_scripts() {
-	// Load our main stylesheet
+	// Load main stylesheet
     wp_enqueue_style('travelcream-style', get_stylesheet_uri());
     wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7CRoboto:400,500,700%7CSuez+One&display=swap', false, null);
+    wp_enqueue_style('jquery-ui', 'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css', false, null);
 
     wp_deregister_script('jquery-core');
     wp_deregister_script('jquery');
@@ -77,6 +78,7 @@ function tc_scripts() {
     wp_register_script('jquery', false, ['jquery-core'], null, true);
     wp_enqueue_script('jquery');
 
+    wp_enqueue_script('jquery-ui-script', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', ['jquery'], null, true);
     wp_enqueue_script('script', get_stylesheet_directory_uri() . '/js/main.js', ['jquery'], null, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -94,7 +96,7 @@ function tc_viewport() {
 
 	global $tc;
 	$detect = new Mobile_Detect;
-	
+
 	// check device
 	if( $detect->isTablet() ){
 		$tc['device'] = 'tablet';
@@ -103,13 +105,13 @@ function tc_viewport() {
 	} else {
 		$tc['device'] = 'desktop';
 	}
-	
+
 	// set image size
 	$tc['image-size'] = $tc['device'];
 
 	// check is retina device
 	$tc['retina'] = ( $detect->is('iOS') ) ? true : false;
-	
+
 	wp_localize_script( 'travelcream-script', 'tc', array(
 		'retina' => $tc['retina'],
 		'mobile' => ( $tc['device'] == "mobile" ) ? true : false,
@@ -211,9 +213,9 @@ add_action('init', 'attractions_post_type');
 /**
  * Remove type tag from script and style
  */
-function wds_remove_type_attr($tag) {
+function tc_remove_type_attr($tag){
     return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
 }
-add_filter('style_loader_tag', 'wds_remove_type_attr', 10, 2);
-add_filter('script_loader_tag', 'wds_remove_type_attr', 10, 2);
-add_filter('autoptimize_html_after_minify', 'wds_remove_type_attr', 10, 2);
+add_filter('style_loader_tag', 'tc_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'tc_remove_type_attr', 10, 2);
+add_filter('autoptimize_html_after_minify', 'tc_remove_type_attr', 10, 2);
