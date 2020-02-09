@@ -33,12 +33,12 @@
                     <nav class="nav__menu">
                         <?php
                             wp_nav_menu([
-                                'menu' => 'Top nav menu',
-                                'container' => false,
-                                'echo' => true,
+                                'menu'        => 'Top nav menu',
+                                'container'   => false,
+                                'echo'        => true,
                                 'fallback_cb' => 'wp_page_menu',
-                                'items_wrap' => '<ul class="nav__list">%3$s</ul>',
-                                'depth' => 0
+                                'items_wrap'  => '<ul class="nav__list">%3$s</ul>',
+                                'depth'       => 0
                             ]);
                         ?>
                     </nav>
