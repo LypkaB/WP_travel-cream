@@ -207,3 +207,13 @@ function attractions_post_type() {
     );
 }
 add_action('init', 'attractions_post_type');
+
+/**
+ * Remove type tag from script and style
+ */
+function wds_remove_type_attr($tag) {
+    return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
+}
+add_filter('style_loader_tag', 'wds_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'wds_remove_type_attr', 10, 2);
+add_filter('autoptimize_html_after_minify', 'wds_remove_type_attr', 10, 2);

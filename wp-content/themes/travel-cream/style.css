@@ -1297,6 +1297,45 @@ li {
   z-index: 1;
 }
 
+footer {
+  padding-top: 75px;
+  padding-bottom: 40px;
+}
+
+footer .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+footer .categories ul li + li {
+  margin-top: 20px;
+}
+
+footer .categories ul li a {
+  color: #585858;
+}
+
+footer .categories ul li:nth-child(1) {
+  pointer-events: none;
+  margin-bottom: 40px;
+}
+
+footer .categories ul li:nth-child(1) a {
+  font-size: 32px;
+}
+
+footer .categories__contact ul li:nth-child(2) a {
+  pointer-events: none;
+}
+
+footer .categories__contact ul li:nth-child(3) a {
+  color: #ff4861;
+}
+
 @media (max-width: 1280px) {
   /*<----- Base styles ----->*/
 
@@ -1410,6 +1449,20 @@ li {
     border-top: none;
     border-left: 2px solid #f3f3f3;
     padding-bottom: 0;
+  }
+
+  /*<----- Footer ----->*/
+
+  footer .categories {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  footer .categories div {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    text-align: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -1532,6 +1585,20 @@ li {
   .trips .section__header-categories ul li:nth-child(1) {
     margin-left: 0;
   }
+
+  /*<----- Footer ----->*/
+
+  footer .categories ul li + li {
+    margin-top: 10px;
+  }
+
+  footer .categories ul li:nth-child(1) {
+    margin-bottom: 10px;
+  }
+
+  footer .categories ul li:nth-child(1) a {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 475px) {
@@ -1624,43 +1691,19 @@ li {
   .trips__post_content p {
     font-size: 14px;
   }
-}
 
-footer {
-  padding-top: 75px;
-  padding-bottom: 40px;
-}
+  /*<----- Footer ----->*/
 
-footer .categories {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
+  footer .categories div {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
 
-footer .categories ul li + li {
-  margin-top: 20px;
-}
+  footer .categories ul li a {
+    font-size: 14px;
+  }
 
-footer .categories ul li a {
-  color: #585858;
-}
-
-footer .categories ul li:nth-child(1) {
-  pointer-events: none;
-  margin-bottom: 40px;
-}
-
-footer .categories ul li:nth-child(1) a {
-  font-size: 32px;
-}
-
-footer .categories__contact ul li:nth-child(2) a {
-  pointer-events: none;
-}
-
-footer .categories__contact ul li:nth-child(3) a {
-  color: #ff4861;
+  footer .categories ul li:nth-child(1) a {
+    font-size: 20px;
+  }
 }
