@@ -1,0 +1,29 @@
+footer
+  padding-top: 75px
+  padding-bottom: 40px
+
+  .categories
+    display: flex
+    justify-content: space-between
+
+    ul
+      li + li
+        margin-top: 20px
+
+      li
+        a
+          color: $primary
+
+        &:nth-child(1)
+          pointer-events: none
+          margin-bottom: 40px
+
+          a
+            font-size: 32px
+
+    &__contact ul li
+      &:nth-child(2) a
+        pointer-events: none
+
+      &:nth-child(3) a
+        color: $red

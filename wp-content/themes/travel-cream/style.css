@@ -1625,3 +1625,42 @@ li {
     font-size: 14px;
   }
 }
+
+footer {
+  padding-top: 75px;
+  padding-bottom: 40px;
+}
+
+footer .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+footer .categories ul li + li {
+  margin-top: 20px;
+}
+
+footer .categories ul li a {
+  color: #585858;
+}
+
+footer .categories ul li:nth-child(1) {
+  pointer-events: none;
+  margin-bottom: 40px;
+}
+
+footer .categories ul li:nth-child(1) a {
+  font-size: 32px;
+}
+
+footer .categories__contact ul li:nth-child(2) a {
+  pointer-events: none;
+}
+
+footer .categories__contact ul li:nth-child(3) a {
+  color: #ff4861;
+}
