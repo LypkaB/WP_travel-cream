@@ -8,8 +8,54 @@
     &__wrap
       justify-content: space-between
 
+    &__logo
+      margin-right: 0
+      flex-basis: 70%
+
+    &__btn-menu
+      display: block
+
     .nav__menu
       display: none
+      width: 100%
+      position: absolute
+      z-index: 10
+      top: 80px
+      left: 0
+      text-align: center
+
+      .nav__list
+        display: flex
+        flex-direction: column
+        background-color: rgba(255, 255, 255, 0.98)
+
+        li + li
+          margin-left: 0
+
+        li
+          display: block
+          padding: 15px 0
+
+          &:first-child
+            margin-top: 15px
+
+          &:nth-child(2)
+            &::after
+              border: solid white
+              border-width: 0 1.5px 1.5px 0
+
+            &:hover::after
+              right: 57px
+
+          &:nth-child(3)
+            margin-left: 0
+
+          &:last-child
+            margin-left: 0
+            margin-bottom: 15px
+
+          a
+            color: $primary
 
   /*<----- section «Search form» ----->*/
   .search-form form
@@ -52,3 +98,8 @@
         flex-basis: 50%
         text-align: center
         margin-bottom: 30px
+
+@media (min-width: 769px)
+  .header
+    .nav__menu
+      display: block !important

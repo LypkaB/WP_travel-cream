@@ -8,6 +8,11 @@ jQuery(document).ready(function($) {
         return false;
     });
 
+    /*<----- Navigation menu ----->*/
+    $('.header__btn-menu').on('click', function() {
+        $('.nav__menu').slideToggle();
+    });
+
     /*<----- Datepicker for section «Search form» ----->*/
     $('#date').datepicker();
 

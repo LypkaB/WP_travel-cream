@@ -15,6 +15,39 @@
 
   &__btn-menu
     display: none
+    flex-shrink: 0
+    margin-top: 4px
+    width: 40px
+    height: 40px
+    background-color: transparent
+    border: 1px solid white
+    border-radius: 3px
+    position: relative
+    outline: none
+    cursor: pointer
+
+    span,
+    span::before,
+    span::after
+      width: 20px
+      height: 2px
+      margin-top: -1px
+      margin-left: -10px
+      position: absolute
+      top: 50%
+      left: 50%
+      background-color: white
+
+    span::before,
+    span::after
+      content: ''
+      display: block
+
+    span::before
+      transform: translateY(-5px)
+
+    span::after
+      transform: translateY(5px)
 
   .nav__menu
     flex-basis: 100%
@@ -30,6 +63,7 @@
 
   &__login-btn
     margin-top: 3px
+    margin-left: 20px
     background-color: transparent
     border: 1px solid white
     border-radius: 4px
