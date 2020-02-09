@@ -1247,6 +1247,10 @@ li {
   padding-top: 70px;
 }
 
+.trips .section__header-categories ul li:nth-child(1) {
+  color: #ff4861;
+}
+
 .trips__post {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1391,6 +1395,22 @@ li {
   .hotels__blocks {
     margin: 20px 0;
   }
+
+  /*<----- section «Trips» ----->*/
+
+  .trips__post {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trips__post_content {
+    border-top: none;
+    border-left: 2px solid #f3f3f3;
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1401,7 +1421,7 @@ li {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .section__header-categories {
@@ -1498,10 +1518,6 @@ li {
 
   /*<----- section «Attractions» ----->*/
 
-  .attractions .section__header {
-    margin-bottom: 10px;
-  }
-
   .attractions .section__header-categories ul li:nth-child(1) {
     margin-left: 0;
   }
@@ -1509,6 +1525,12 @@ li {
   .attractions__post {
     -ms-flex-preferred-size: 49%;
     flex-basis: 49%;
+  }
+
+  /*<----- section «Trips» ----->*/
+
+  .trips .section__header-categories ul li:nth-child(1) {
+    margin-left: 0;
   }
 }
 
@@ -1589,5 +1611,17 @@ li {
   .attractions__post_wrap {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
+  }
+
+  /*<----- section «Trips» ----->*/
+
+  .trips__post_content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .trips__post_content span,
+  .trips__post_content p {
+    font-size: 14px;
   }
 }

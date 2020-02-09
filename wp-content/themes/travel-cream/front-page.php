@@ -375,7 +375,6 @@ Template Name: Home
                         </div>
                         <!-- /.trips__post_content -->
 
-                        <a href="<?php the_permalink(); ?>" class="trips__post-link"></a>
                     </div>
                     <!-- /.trips__post -->
                 <?php
