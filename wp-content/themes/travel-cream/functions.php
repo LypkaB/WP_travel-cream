@@ -127,8 +127,8 @@ require get_template_directory() . '/inc/template-tags.php';
 function flights_post_type() {
     register_post_type('flights', [
             'labels' => [
-                'name'          => __('Flights'),
-                'singular_name' => __('Flights')
+                'name'          => 'Flights',
+                'singular_name' => 'Flight'
             ],
                 'public'        => true,
                 'has_archive'   => true,
@@ -139,13 +139,42 @@ function flights_post_type() {
     );
 
     register_taxonomy(
-        'flights-category',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-        'flights',        //post type name
+        'flights-category',
+        'flights',
         [
             'hierarchical'  => true,
-            'label'         => 'Categories',  //Display name
+            'label'         => 'Categories',
             'query_var'     => true
         ]
     );
 }
 add_action('init', 'flights_post_type');
+
+/**
+ * Registration of custom posts «Hotels»
+ */
+function hotels_post_type() {
+    register_post_type('hotels', [
+            'labels' => [
+                'name'          => 'Hotels',
+                'singular_name' => 'Hotel'
+            ],
+            'public'        => true,
+            'has_archive'   => true,
+            'show_in_menu'  => true,
+            'supports'      => ['title', 'category'],
+            'taxonomies'    => ['hotels_category']
+        ]
+    );
+
+    register_taxonomy(
+        'hotels-category',
+        'hotels',
+        [
+            'hierarchical'  => true,
+            'label'         => 'Categories',
+            'query_var'     => true
+        ]
+    );
+}
+add_action('init', 'hotels_post_type');

@@ -1,4 +1,21 @@
 @media (max-width: 640px)
+  /*<----- Base styles ----->*/
+  .section__header
+    flex-direction: column
+    margin-bottom: 30px
+
+    &-categories
+      margin-top: 30px
+
+      ul li:nth-child(3)
+        margin-left: 0
+
+  .price-btn a
+    margin: 0 auto
+
+  .see-all-btn
+    text-align: center
+
   /*<----- section «Banner» ----->*/
   .banner
     h2
@@ -10,16 +27,6 @@
 
   /*<----- section «Flights» ----->*/
   .flights
-    &__header
-      flex-direction: column
-      margin-bottom: 30px
-
-    &__categories
-      margin-top: 30px
-
-      ul li:nth-child(3)
-        margin-left: 0
-
     &__blocks
       margin-bottom: 20px
 
@@ -54,9 +61,3 @@
       &_time span:first-child,
       &_departure span:last-child
         margin-left: 0
-
-      &_price a
-        margin: 0 auto
-
-    &__see-all-btn
-      text-align: center

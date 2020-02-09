@@ -1,0 +1,39 @@
+.hotels
+  padding-top: 34px
+
+  .section__header-categories ul
+    li
+      &:nth-child(1)
+        order: 1
+        color: $red
+
+      &:nth-child(2)
+        order: 2
+
+  &__blocks
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    margin: 58px 0 10px
+
+  &__post
+    flex-basis: 31.5%
+    margin-bottom: 25px
+
+    &_wrap
+      border-left: 2px solid $darkWhite
+      border-right: 2px solid $darkWhite
+      border-bottom: 2px solid $darkWhite
+      padding: 25px 13px
+
+    &-title
+      font-size: 16px
+      font-weight: 700
+
+    &_info
+      margin: 17px 0
+      display: flex
+      justify-content: space-between
+
+      span
+        color: $lightPrimary

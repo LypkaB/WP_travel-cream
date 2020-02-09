@@ -10,6 +10,11 @@
 body
   font-family: 'Open Sans', sans-serif
 
+ul, li
+  list-style: none
+  margin: 0
+  padding: 0
+
 .container
   max-width: 1110px
   margin: 0 auto
@@ -20,14 +25,56 @@ body
     background-size: cover
     background-position: center
 
-  &-title
-    font-size: 28px
-    color: $primary
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 50px
 
-ul, li
-  list-style: none
-  margin: 0
-  padding: 0
+    &-title
+      font-size: 28px
+      color: $primary
+
+    &-categories ul
+      display: flex
+
+      li
+        margin-left: 32px
+        font-size: 16px
+        font-weight: 600
+        color: $primary
+        cursor: pointer
+
+        &:nth-child(1)
+          order: 3
+
+        &:nth-child(2)
+          order: 2
+
+        &:nth-child(3)
+          order: 1
+          color: $red
+
+        &:nth-child(4)
+          order: 4
+
+.price-btn a
+  display: block
+  width: 122px
+  padding: 5px 0
+  font-size: 18px
+  font-weight: 600
+  color: $red
+  text-align: center
+  border: 1px solid $red
+  border-radius: 4px
+
+.see-all-btn
+  text-align: right
+
+  a
+    font-size: 17px
+    color: $primary
 
 @import 'header'
 @import 'sections/sections'

@@ -699,6 +699,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   max-width: 1110px;
   margin: 0 auto;
@@ -710,16 +717,82 @@ body {
   background-position: center;
 }
 
-.section-title {
+.section__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.section__header-title {
   font-size: 28px;
   color: #585858;
 }
 
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.section__header-categories ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section__header-categories ul li {
+  margin-left: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #585858;
+  cursor: pointer;
+}
+
+.section__header-categories ul li:nth-child(1) {
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+
+.section__header-categories ul li:nth-child(2) {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.section__header-categories ul li:nth-child(3) {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  color: #ff4861;
+}
+
+.section__header-categories ul li:nth-child(4) {
+  -webkit-box-ordinal-group: 5;
+  -ms-flex-order: 4;
+  order: 4;
+}
+
+.price-btn a {
+  display: block;
+  width: 122px;
+  padding: 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff4861;
+  text-align: center;
+  border: 1px solid #ff4861;
+  border-radius: 4px;
+}
+
+.see-all-btn {
+  text-align: right;
+}
+
+.see-all-btn a {
+  font-size: 17px;
+  color: #585858;
 }
 
 .header {
@@ -857,59 +930,7 @@ li {
 
 .flights {
   padding-top: 74px;
-  padding-bottom: 100px;
-}
-
-.flights__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.flights__categories ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.flights__categories ul li {
-  margin-left: 32px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #585858;
-  cursor: pointer;
-}
-
-.flights__categories ul li:nth-child(1) {
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
-  order: 3;
-}
-
-.flights__categories ul li:nth-child(2) {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.flights__categories ul li:nth-child(3) {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
-  color: #ff4861;
-}
-
-.flights__categories ul li:nth-child(4) {
-  -webkit-box-ordinal-group: 5;
-  -ms-flex-order: 4;
-  order: 4;
+  padding-bottom: 30px;
 }
 
 .flights__blocks {
@@ -1033,18 +1054,6 @@ li {
   text-transform: uppercase;
 }
 
-.flights__post_price a {
-  display: block;
-  width: 122px;
-  padding: 5px 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff4861;
-  text-align: center;
-  border: 1px solid #ff4861;
-  border-radius: 4px;
-}
-
 .flights__post_col span {
   display: block;
   font-size: 18px;
@@ -1059,13 +1068,65 @@ li {
   color: #a4a4a4;
 }
 
-.flights__see-all-btn {
-  text-align: right;
+.hotels {
+  padding-top: 34px;
 }
 
-.flights__see-all-btn a {
-  font-size: 17px;
-  color: #585858;
+.hotels .section__header-categories ul li:nth-child(1) {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  color: #ff4861;
+}
+
+.hotels .section__header-categories ul li:nth-child(2) {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.hotels__blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 58px 0 10px;
+}
+
+.hotels__post {
+  -ms-flex-preferred-size: 31.5%;
+  flex-basis: 31.5%;
+  margin-bottom: 25px;
+}
+
+.hotels__post_wrap {
+  border-left: 2px solid #f3f3f3;
+  border-right: 2px solid #f3f3f3;
+  border-bottom: 2px solid #f3f3f3;
+  padding: 25px 13px;
+}
+
+.hotels__post-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.hotels__post_info {
+  margin: 17px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.hotels__post_info span {
+  color: #a4a4a4;
 }
 
 @media (max-width: 1280px) {
@@ -1077,9 +1138,19 @@ li {
 }
 
 @media (max-width: 992px) {
+  /*<----- Base styles ----->*/
+
+  .section__header-categories ul li {
+    font-size: 14px;
+  }
+
+  .price-btn a {
+    width: 100px;
+    font-size: 14px;
+  }
+
   /*<----- section «Flights» ----->*/
 
-  .flights__categories ul li,
   .flights__blocks ul li,
   .flights__post_col span {
     font-size: 14px;
@@ -1104,17 +1175,12 @@ li {
     -ms-flex-preferred-size: 19.5%;
     flex-basis: 19.5%;
   }
-
-  .flights__post_price a {
-    width: 100px;
-    font-size: 14px;
-  }
 }
 
 @media (max-width: 768px) {
   /*<----- Base styles ----->*/
 
-  .section-title {
+  .section__header-title {
     font-size: 22px;
   }
 
@@ -1158,6 +1224,32 @@ li {
 }
 
 @media (max-width: 640px) {
+  /*<----- Base styles ----->*/
+
+  .section__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .section__header-categories {
+    margin-top: 30px;
+  }
+
+  .section__header-categories ul li:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .price-btn a {
+    margin: 0 auto;
+  }
+
+  .see-all-btn {
+    text-align: center;
+  }
+
   /*<----- section «Banner» ----->*/
 
   .banner h2 {
@@ -1170,22 +1262,6 @@ li {
   }
 
   /*<----- section «Flights» ----->*/
-
-  .flights__header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-
-  .flights__categories {
-    margin-top: 30px;
-  }
-
-  .flights__categories ul li:nth-child(3) {
-    margin-left: 0;
-  }
 
   .flights__blocks {
     margin-bottom: 20px;
@@ -1234,17 +1310,15 @@ li {
   .flights__post_departure span:last-child {
     margin-left: 0;
   }
-
-  .flights__post_price a {
-    margin: 0 auto;
-  }
-
-  .flights__see-all-btn {
-    text-align: center;
-  }
 }
 
 @media (max-width: 475px) {
+  /*<----- Base styles ----->*/
+
+  .section__header-categories ul li {
+    margin-left: 12px;
+  }
+
   /*<----- Header ----->*/
 
   .header__login-btn {
@@ -1283,9 +1357,5 @@ li {
   .flights {
     padding-top: 40px;
     padding-bottom: 40px;
-  }
-
-  .flights__categories ul li {
-    margin-left: 12px;
   }
 }

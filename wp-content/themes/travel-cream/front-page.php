@@ -53,13 +53,13 @@ Template Name: Home
     <!-- Flights -->
     <section class="flights">
         <div class="container">
-            <div class="flights__header">
-                <div class="section-title">
+            <div class="section__header">
+                <div class="section__header-title">
                     <h2><?php the_field( 'flights_section_title' ); ?></h2>
                 </div>
-                <!-- /.section-title -->
+                <!-- /.section__header-title -->
 
-                <div class="flights__categories">
+                <div class="section__header-categories">
                     <?php
                         $flights_categories = get_terms('flights-category');
                         if (!empty($flights_categories) && !is_wp_error($flights_categories)) {
@@ -71,9 +71,9 @@ Template Name: Home
                         }
                     ?>
                 </div>
-                <!-- /.flights__categories -->
+                <!-- /.section__header-categories -->
             </div>
-            <!-- /.flights__header -->
+            <!-- /.section__header -->
 
             <div class="flights__blocks">
                 <ul>
@@ -149,10 +149,10 @@ Template Name: Home
                         <!-- /.flights__post_time -->
 
                         <span class="flights__post_blocks_title"><?= $flights_blocks_title_6 ?></span>
-                        <div class="flights__post_price">
+                        <div class="price-btn">
                             <a href="#!"><?php the_field('fgs_post_price'); ?></a>
                         </div>
-                        <!-- /.flights__post_price -->
+                        <!-- /.price-btn -->
                     </div>
                     <!-- /.flights__post -->
                 <?php
@@ -163,10 +163,94 @@ Template Name: Home
             </div>
             <!-- /.flights__blocks -->
 
-            <div class="flights__see-all-btn">
+            <div class="see-all-btn">
                 <a href="#!"><?php the_field('flights_see_all_btn'); ?></a>
             </div>
-            <!-- /.flights__see-all-btn -->
+            <!-- /.see-all-btn -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Hotels -->
+    <section class="hotels">
+        <div class="container">
+            <div class="section__header">
+                <div class="section__header-title">
+                    <h2><?php the_field( 'hotels_section_title' ); ?></h2>
+                </div>
+                <!-- /.section__header-title -->
+
+                <div class="section__header-categories">
+                    <?php
+                        $hotels_categories = get_terms('hotels-category');
+                        if (!empty($hotels_categories) && !is_wp_error($hotels_categories)) {
+                            echo "<ul>";
+                            foreach ($hotels_categories as $hotels_category) {
+                                echo "<li>" . $hotels_category -> name . "</li>";
+                            }
+                            echo "</ul>";
+                        }
+                    ?>
+                </div>
+                <!-- /.section__header-categories -->
+            </div>
+            <!-- /.section__header -->
+
+            <div class="hotels__blocks">
+                <?php
+                    global $post;
+                    $args = [
+                        'post_type'     => 'hotels',
+                        'numberposts'   => 6,
+                        'orderby'       => 'date',
+                        'order'         => 'DESC'
+                    ];
+
+                    $hotels_post = get_posts($args);
+
+                    if ($hotels_post) :
+                        foreach ($hotels_post as $post) : setup_postdata($post)
+                ?>
+                    <div class="hotels__post">
+                        <?php
+                            $hotels_post_img = get_field('hotels_post_img');
+                            if (!empty($hotels_post_img)) :
+                        ?>
+                            <div class="hotels__post-img">
+                                <img src="<?= $hotels_post_img['url']; ?>" alt="<?= $hotels_post_img['alt']; ?>">
+                            </div>
+                            <!-- /.hotels__post-img -->
+                        <?php endif; ?>
+
+                        <div class="hotels__post_wrap">
+                            <span class="hotels__post-title"><?php the_title(); ?></span>
+
+                            <div class="hotels__post_info">
+                                <span><?php the_field('hotels_post_dtc'); ?></span>
+                                <span><?php the_field('hotels_post_desc'); ?></span>
+                            </div>
+                            <!-- /.hotels__post_info -->
+
+                            <div class="price-btn">
+                                <a href="#!"><?php the_field('hotels_post_price'); ?></a>
+                            </div>
+                            <!-- /.price-btn -->
+                        </div>
+                        <!-- /.hotels__post_wrap -->
+                    </div>
+                    <!-- /.hotels__post -->
+                <?php
+                        endforeach;
+                        wp_reset_postdata();
+                    endif;
+                ?>
+            </div>
+            <!-- /.hotels__blocks -->
+
+            <div class="see-all-btn">
+                <a href="#!"><?php the_field('hotels_see_all_btn'); ?></a>
+            </div>
+            <!-- /.see-all-btn -->
         </div>
         <!-- /.container -->
     </section>
