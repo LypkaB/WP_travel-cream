@@ -26,12 +26,11 @@
       color: white
 
   /*<----- section «Flights» ----->*/
-  .flights
-    &__blocks
-      margin-bottom: 20px
+  .flights__blocks
+    margin-bottom: 20px
 
-      ul
-        display: none
+    ul
+      display: none
 
     &__post
       flex-wrap: wrap
@@ -61,3 +60,11 @@
       &_time span:first-child,
       &_departure span:last-child
         margin-left: 0
+
+  /*<----- section «Hotels» ----->*/
+  .hotels
+    &__post
+      flex-basis: 46%
+
+    .price-btn a
+      margin: initial

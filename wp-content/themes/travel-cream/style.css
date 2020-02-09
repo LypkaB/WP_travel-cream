@@ -1069,7 +1069,7 @@ li {
 }
 
 .hotels {
-  padding-top: 34px;
+  padding: 34px 0;
 }
 
 .hotels .section__header-categories ul li:nth-child(1) {
@@ -1221,6 +1221,20 @@ li {
     -ms-flex-preferred-size: 22%;
     flex-basis: 22%;
   }
+
+  /*<----- section «Hotels» ----->*/
+
+  .hotels {
+    padding-top: 0;
+  }
+
+  .hotels .section__header-categories ul li:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .hotels__blocks {
+    margin: 20px 0;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1271,7 +1285,7 @@ li {
     display: none;
   }
 
-  .flights__post {
+  .flights__blocks__post {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     text-align: center;
@@ -1282,7 +1296,7 @@ li {
     padding-bottom: 0;
   }
 
-  .flights__post > div {
+  .flights__blocks__post > div {
     margin-bottom: 30px;
     padding: 10px 0;
     -ms-flex-preferred-size: 100%;
@@ -1291,7 +1305,7 @@ li {
     border-bottom: 1px solid rgba(255, 72, 97, 0.3);
   }
 
-  .flights__post_blocks_title {
+  .flights__blocks__post_blocks_title {
     display: initial;
     font-size: 16px;
     font-weight: 600;
@@ -1299,16 +1313,27 @@ li {
     margin-bottom: 20px;
   }
 
-  .flights__post_airline {
+  .flights__blocks__post_airline {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
   }
 
-  .flights__post_date span:last-child,
-  .flights__post_time span:first-child,
-  .flights__post_departure span:last-child {
+  .flights__blocks__post_date span:last-child,
+  .flights__blocks__post_time span:first-child,
+  .flights__blocks__post_departure span:last-child {
     margin-left: 0;
+  }
+
+  /*<----- section «Hotels» ----->*/
+
+  .hotels__post {
+    -ms-flex-preferred-size: 46%;
+    flex-basis: 46%;
+  }
+
+  .hotels .price-btn a {
+    margin: initial;
   }
 }
 
@@ -1357,5 +1382,12 @@ li {
   .flights {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+
+  /*<----- section «Hotels» ----->*/
+
+  .hotels__post {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
   }
 }
