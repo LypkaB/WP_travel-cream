@@ -749,31 +749,6 @@ li {
   cursor: pointer;
 }
 
-.section__header-categories ul li:nth-child(1) {
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
-  order: 3;
-}
-
-.section__header-categories ul li:nth-child(2) {
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.section__header-categories ul li:nth-child(3) {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
-  color: #ff4861;
-}
-
-.section__header-categories ul li:nth-child(4) {
-  -webkit-box-ordinal-group: 5;
-  -ms-flex-order: 4;
-  order: 4;
-}
-
 .price-btn a {
   display: block;
   width: 122px;
@@ -788,6 +763,10 @@ li {
 
 .see-all-btn {
   text-align: right;
+}
+
+.see-all-btn span {
+  text-transform: lowercase;
 }
 
 .see-all-btn a {
@@ -931,6 +910,31 @@ li {
 .flights {
   padding-top: 74px;
   padding-bottom: 30px;
+}
+
+.flights .section__header-categories ul li:nth-child(1) {
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+
+.flights .section__header-categories ul li:nth-child(2) {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.flights .section__header-categories ul li:nth-child(3) {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  color: #ff4861;
+}
+
+.flights .section__header-categories ul li:nth-child(4) {
+  -webkit-box-ordinal-group: 5;
+  -ms-flex-order: 4;
+  order: 4;
 }
 
 .flights__blocks {
@@ -1129,6 +1133,112 @@ li {
   color: #a4a4a4;
 }
 
+.attractions {
+  padding-top: 30px;
+}
+
+.attractions .section__header-categories ul li:nth-child(1) {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+  color: #ff4861;
+}
+
+.attractions .section__header-categories ul li:nth-child(2) {
+  -webkit-box-ordinal-group: 6;
+  -ms-flex-order: 5;
+  order: 5;
+}
+
+.attractions .section__header-categories ul li:nth-child(3) {
+  -webkit-box-ordinal-group: 8;
+  -ms-flex-order: 7;
+  order: 7;
+}
+
+.attractions .section__header-categories ul li:nth-child(4) {
+  -webkit-box-ordinal-group: 7;
+  -ms-flex-order: 6;
+  order: 6;
+}
+
+.attractions .section__header-categories ul li:nth-child(5) {
+  -webkit-box-ordinal-group: 5;
+  -ms-flex-order: 4;
+  order: 4;
+}
+
+.attractions .section__header-categories ul li:nth-child(6) {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.attractions .section__header-categories ul li:nth-child(7) {
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+}
+
+.attractions__blocks {
+  padding-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.attractions__post {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 350px;
+  height: 200px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.attractions__post:nth-child(1) {
+  width: 350px;
+  height: 525px;
+}
+
+.attractions__post::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: -1;
+}
+
+.attractions__post-title {
+  font-family: 'Suez One', serif;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.attractions__post_wrap {
+  -ms-flex-preferred-size: 65%;
+  flex-basis: 65%;
+}
+
+.attractions__post_wrap .attractions__post {
+  width: 100%;
+  height: 250px;
+}
+
 @media (max-width: 1280px) {
   /*<----- Base styles ----->*/
 
@@ -1228,10 +1338,6 @@ li {
     padding-top: 0;
   }
 
-  .hotels .section__header-categories ul li:nth-child(1) {
-    margin-left: 0;
-  }
-
   .hotels__blocks {
     margin: 20px 0;
   }
@@ -1250,10 +1356,6 @@ li {
 
   .section__header-categories {
     margin-top: 30px;
-  }
-
-  .section__header-categories ul li:nth-child(3) {
-    margin-left: 0;
   }
 
   .price-btn a {
@@ -1277,6 +1379,10 @@ li {
 
   /*<----- section «Flights» ----->*/
 
+  .flights .section__header-categories ul li:nth-child(3) {
+    margin-left: 0;
+  }
+
   .flights__blocks {
     margin-bottom: 20px;
   }
@@ -1285,7 +1391,7 @@ li {
     display: none;
   }
 
-  .flights__blocks__post {
+  .flights__post {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     text-align: center;
@@ -1296,7 +1402,7 @@ li {
     padding-bottom: 0;
   }
 
-  .flights__blocks__post > div {
+  .flights__post > div {
     margin-bottom: 30px;
     padding: 10px 0;
     -ms-flex-preferred-size: 100%;
@@ -1305,7 +1411,7 @@ li {
     border-bottom: 1px solid rgba(255, 72, 97, 0.3);
   }
 
-  .flights__blocks__post_blocks_title {
+  .flights__post_blocks_title {
     display: initial;
     font-size: 16px;
     font-weight: 600;
@@ -1313,19 +1419,23 @@ li {
     margin-bottom: 20px;
   }
 
-  .flights__blocks__post_airline {
+  .flights__post_airline {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
   }
 
-  .flights__blocks__post_date span:last-child,
-  .flights__blocks__post_time span:first-child,
-  .flights__blocks__post_departure span:last-child {
+  .flights__post_date span:last-child,
+  .flights__post_time span:first-child,
+  .flights__post_departure span:last-child {
     margin-left: 0;
   }
 
   /*<----- section «Hotels» ----->*/
+
+  .hotels .section__header-categories ul li:nth-child(1) {
+    margin-left: 0;
+  }
 
   .hotels__post {
     -ms-flex-preferred-size: 46%;

@@ -178,3 +178,32 @@ function hotels_post_type() {
     );
 }
 add_action('init', 'hotels_post_type');
+
+/**
+ * Registration of custom posts «Attractions»
+ */
+function attractions_post_type() {
+    register_post_type('attractions', [
+            'labels' => [
+                'name'          => 'Attractions',
+                'singular_name' => 'Attraction'
+            ],
+            'public'        => true,
+            'has_archive'   => true,
+            'show_in_menu'  => true,
+            'supports'      => ['title', 'category'],
+            'taxonomies'    => ['attractions_category']
+        ]
+    );
+
+    register_taxonomy(
+        'attractions-category',
+        'attractions',
+        [
+            'hierarchical'  => true,
+            'label'         => 'Categories',
+            'query_var'     => true
+        ]
+    );
+}
+add_action('init', 'attractions_post_type');

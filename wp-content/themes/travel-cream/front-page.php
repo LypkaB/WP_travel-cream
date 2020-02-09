@@ -11,6 +11,10 @@ Template Name: Home
     $flights_blocks_title_4 = get_field('flights_blocks_title_4');
     $flights_blocks_title_5 = get_field('flights_blocks_title_5');
     $flights_blocks_title_6 = get_field('flights_blocks_title_6');
+    $flights_section_title = get_field('flights_section_title');
+    $see_all_btn = get_field('see_all_btn');
+    $hotels_section_title = get_field('hotels_section_title');
+    $attractions_section_title = get_field('attractions_section_title');
 ?>
 
 <?php get_header(); ?>
@@ -55,7 +59,7 @@ Template Name: Home
         <div class="container">
             <div class="section__header">
                 <div class="section__header-title">
-                    <h2><?php the_field( 'flights_section_title' ); ?></h2>
+                    <h2><?= $flights_section_title ?></h2>
                 </div>
                 <!-- /.section__header-title -->
 
@@ -90,7 +94,6 @@ Template Name: Home
                     $args = [
                         'post_type'     => 'flights',
                         'numberposts'   => 5,
-                        'orderby'       => 'date',
                         'order'         => 'DESC'
                     ];
 
@@ -164,7 +167,10 @@ Template Name: Home
             <!-- /.flights__blocks -->
 
             <div class="see-all-btn">
-                <a href="#!"><?php the_field('flights_see_all_btn'); ?></a>
+                <a href="#!">
+                    <?= $see_all_btn ?>
+                    <span><?=$flights_section_title ?></span>
+                </a>
             </div>
             <!-- /.see-all-btn -->
         </div>
@@ -176,7 +182,7 @@ Template Name: Home
         <div class="container">
             <div class="section__header">
                 <div class="section__header-title">
-                    <h2><?php the_field( 'hotels_section_title' ); ?></h2>
+                    <h2><?= $hotels_section_title ?></h2>
                 </div>
                 <!-- /.section__header-title -->
 
@@ -202,7 +208,6 @@ Template Name: Home
                     $args = [
                         'post_type'     => 'hotels',
                         'numberposts'   => 6,
-                        'orderby'       => 'date',
                         'order'         => 'DESC'
                     ];
 
@@ -248,7 +253,72 @@ Template Name: Home
             <!-- /.hotels__blocks -->
 
             <div class="see-all-btn">
-                <a href="#!"><?php the_field('hotels_see_all_btn'); ?></a>
+                <a href="#!">
+                    <?= $see_all_btn ?>
+                    <span><?=$hotels_section_title ?></span>
+                </a>
+            </div>
+            <!-- /.see-all-btn -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Attractions -->
+    <section class="attractions">
+        <div class="container">
+            <div class="section__header">
+                <div class="section__header-title">
+                    <h2><?= $attractions_section_title ?></h2>
+                </div>
+                <!-- /.section__header-title -->
+
+                <div class="section__header-categories">
+                    <?php
+                        $attractions_categories = get_terms('attractions-category');
+                        if (!empty($attractions_categories) && !is_wp_error($attractions_categories)) {
+                            echo "<ul>";
+                            foreach ($attractions_categories as $attractions_category) {
+                                echo "<li>" . $attractions_category -> name . "</li>";
+                            }
+                            echo "</ul>";
+                        }
+                    ?>
+                </div>
+                <!-- /.section__header-categories -->
+            </div>
+            <!-- /.section__header -->
+
+            <div class="attractions__blocks">
+                <?php
+                    global $post;
+                    $args = [
+                        'post_type'     => 'attractions',
+                        'numberposts'   => 6,
+                        'order'         => 'ASC'
+                    ];
+
+                    $attractions_post = get_posts($args);
+
+                    if ($attractions_post) :
+                        foreach ($attractions_post as $post) : setup_postdata($post)
+                ?>
+                    <div class="attractions__post" style="background-image: url('<?php the_field('attractions_post_img'); ?>')">
+                        <span class="attractions__post-title"><?php the_title(); ?></span>
+                    </div>
+                    <!-- /.attractions__post -->
+                <?php
+                        endforeach;
+                        wp_reset_postdata();
+                    endif;
+                ?>
+            </div>
+            <!-- /.attractions__blocks -->
+
+            <div class="see-all-btn">
+                <a href="#!">
+                    <?= $see_all_btn ?>
+                    <span><?=$attractions_section_title ?></span>
+                </a>
             </div>
             <!-- /.see-all-btn -->
         </div>

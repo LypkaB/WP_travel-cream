@@ -7,9 +7,6 @@
     &-categories
       margin-top: 30px
 
-      ul li:nth-child(3)
-        margin-left: 0
-
   .price-btn a
     margin: 0 auto
 
@@ -26,11 +23,15 @@
       color: white
 
   /*<----- section «Flights» ----->*/
-  .flights__blocks
-    margin-bottom: 20px
+  .flights
+    .section__header-categories ul li:nth-child(3)
+      margin-left: 0
 
-    ul
-      display: none
+    &__blocks
+      margin-bottom: 20px
+
+      ul
+        display: none
 
     &__post
       flex-wrap: wrap
@@ -63,6 +64,9 @@
 
   /*<----- section «Hotels» ----->*/
   .hotels
+    .section__header-categories ul li:nth-child(1)
+      margin-left: 0
+
     &__post
       flex-basis: 46%
 

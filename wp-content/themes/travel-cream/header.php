@@ -12,7 +12,7 @@
 
 <body <?php body_class(); ?>>
 
-    <div class="section-bg" style="background-image: url( '<?php the_field('banner_bg'); ?>' )">
+    <div class="section-bg" style="background-image: url('<?php the_field('banner_bg'); ?>')">
 
         <!-- Header -->
         <header class="header">
